@@ -1,0 +1,30 @@
+.add-task-button {
+  border-radius: 1rem;
+  height: 3rem;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  cursor: pointer; /* Hace que el puntero cambie a una "mano" */
+
+  /* 2. El truco de la suavidad (Buena práctica) */
+  /* Le dice al navegador que suavice el cambio de fondo durante 0.3 segundos */
+  transition: background-color 0.3s ease;
+}
+.add-task-button__icon {
+  width: 0.85rem;
+  height: 0.85rem;
+  display: inline-block;
+  vertical-align: middle; /* Alinea el icono verticalmente con el texto del botón */
+  margin-right: 5px; /* Separa el icono del texto */
+}
+.add-task-button__text {
+  display: inline-block;
+  vertical-align: middle; /* Alinea el icono verticalmente con el texto del botón */
+}
+.add-task-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+.add-task-button:active {
+  /* Reduce el tamaño del botón al 95% de su tamaño original */
+  transform: scale(0.95);
+}
