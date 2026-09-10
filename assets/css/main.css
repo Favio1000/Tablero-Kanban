@@ -1,5 +1,11 @@
+/*Base*/
+@import url(base/variables.css);
 /* Atomos*/
 @import url(atomos/buttons.css);
+@import url(atomos/card.css);
 
 /*Plantilla*/
 @import url(plantillas/template.css);
+
+/*Moleculas*/
+@import url(moleculas/kanban.css);

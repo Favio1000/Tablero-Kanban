@@ -1,0 +1,39 @@
+.task-card {
+  border-radius: 1rem;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  cursor: pointer; /* Hace que el puntero cambie a una "mano" */
+
+  /* 2. El truco de la suavidad (Buena práctica) */
+  /* Le dice al navegador que suavice el cambio de fondo durante 0.3 segundos */
+  transition: color 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.task-card:hover {
+  color: #04423b;
+}
+.task-card__number,
+.task-card__priority,
+.task-card__ {
+  display: inline;
+}
+.task-card__priority {
+  color: rgb(8, 124, 8);
+  background-color: rgb(85, 231, 92);
+  padding: 2px;
+}
+.task-card__header {
+  margin-bottom: 10px;
+}
+.task-card__footer {
+  text-align: right;
+}
+.task-card__comment-icon {
+  width: var(--ms-size-icon);
+  height: var(--ms-size-icon);
+  margin-right: var(--ms-margin-right); /* Separa el icono del texto */
+  display: inline-block;
+  vertical-align: middle; /* Alinea el icono verticalmente con el texto del botón */
+}
