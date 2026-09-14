@@ -1,0 +1,31 @@
+.task-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+
+  /* 2. El truco de la suavidad (Buena práctica) */
+  /* Le dice al navegador que suavice el cambio de fondo durante 0.3 segundos */
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+}
+.center {
+  align-items: center;
+}
+.margen-0 {
+  margin: 0px;
+}

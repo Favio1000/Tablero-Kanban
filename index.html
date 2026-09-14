@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,60 +7,320 @@
     <title>Document</title>
   </head>
   <body>
-    <main>
-      <div class="kanban-column">
-        <section class="task-card">
-          <div class="task-card__header">
-            <p class="task-card__number">Tsk-001</p>
-            <p class="task-card__priority">Prioridad</p>
-          </div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-          consequuntur, modi vel suscipit sed perferendis voluptatum, vero
-          blanditiis praesentium autem provident nobis placeat recusandae labore
-          corporis, nisi itaque. Debitis, aliquam! Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Corrupti molestiae adipisci sit
-          assumenda quos, illum saepe fugit perspiciatis, necessitatibus nam eum
-          modi fugiat qui. Distinctio praesentium iste exercitationem numquam
-          eveniet!
-          <div class="task-card__footer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-message-square task-card__comment-icon"
-            >
-              <path
-                d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"
-              />
-            </svg>
-            5
-          </div>
-        </section>
-        <button class="add-task-button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-plus add-task-button__icon"
+    <header>
+      <div class="header-sub-container medio-small-gap">
+        <img
+          src="data:image/png;base64,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"
+          alt="logo"
+          class="add-task-button__icon ms-image"
+        />
+        <p>hola</p>
+        <nav class="header-sub-container left-margin small-gap">
+          <a
+            href="#"
+            class="header-sub-container small-gap none-style-a rounded-corner effect"
           >
-            <path d="M5 12h14" />
-            <path d="M12 5v14" />
-          </svg>
+            <img
+              class="sm-icon"
+              src="assets/imagenes/icon/icono_tablero.svg"
+              alt="Tablero"
+            />
+
+            <p>Tablero Kanban</p>
+          </a>
+          <a
+            href="Page/task_list.html"
+            class="header-sub-container small-gap none-style-a rounded-corner effect"
+          >
+            <img
+              class="sm-icon"
+              src="assets/imagenes/icon/icono_lista_tareas.svg"
+              alt="Lista de tareas"
+            />
+            <p>Lista de tareas</p>
+          </a>
+        </nav>
+      </div>
+      <div class="header-sub-container right-content medio-small-gap">
+        <div>
+          favio baldviezo <br />
+          Programador
+        </div>
+        <div class="user-image ms-image">
+          <img
+            src="https://static.vecteezy.com/system/resources/thumbnails/072/454/698/small/beautiful-sunset-over-a-reflective-beach-with-rocky-formations-capturing-the-vibrant-colors-and-tranquil-atmosphere-of-a-serene-coastal-landscape-at-dusk-photo.jpg"
+            alt="Paisaje"
+            class="image"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1>Tablero Kanban</h1>
+      <p>Gestiona y monitorea el avance del sprint en tiempo real.</p>
+      <section class="static">
+        <h2>Estadísticas</h2>
+        <section class="statistics-dashboard" id="estadisticas">
+          <article class="statistical-card">
+            <span class="statistical-card__icon">
+              <img
+                class="sm-icon"
+                src="assets/imagenes/icon/icono_lista_tares_estadisticas.svg"
+                alt="icono de tareas"
+              />
+            </span>
+            <p class="statistical-card__text">Total tareas <br />6 tareas</p>
+          </article>
+          <article class="statistical-card">
+            <span class="statistical-card__icon"
+              ><img
+                class="sm-icon"
+                src="assets/imagenes/icon/icono_por_hacer.svg"
+                alt="icono de tareas"
+            /></span>
+            <p class="statistical-card__text">Por hacer <br />6 tareas</p>
+          </article>
+          <article class="statistical-card">
+            <span class="statistical-card__icon">
+              <img
+                class="sm-icon"
+                src="assets/imagenes/icon/icono_en_proceso.svg"
+                alt="icono de tareas"
+              />
+            </span>
+            <p class="statistical-card__text">En proceso <br />6 tareas</p>
+          </article>
+          <article class="statistical-card">
+            <span class="statistical-card__icon">
+              <img
+                class="sm-icon"
+                src="assets/imagenes/icon/icono_completado.svg"
+                alt="icono de tareas"
+              />
+            </span>
+            <p class="statistical-card__text">Completadas <br />6 tareas</p>
+          </article>
+          <article class="statistical-card">
+            <span class="statistical-card__icon">
+              <img
+                class="sm-icon"
+                src="assets/imagenes/icon/icono_prioridad.svg"
+                alt="icono de tareas"
+              />
+            </span>
+            <p class="statistical-card__text">Prioritarias <br />6 tareas</p>
+          </article>
+        </section>
+      </section>
+
+      <article class="tablero-kanban" id="tablero">
+        <div class="kanban-column">
+          <div class="kanban-column__header">
+            <div class="kanban-column__header_left">
+              <img
+                class="sm-icon"
+                src="assets/imagenes/icon/icono_por_hacer.svg"
+                alt="icono de tareas"
+              />
+              Por hacer
+            </div>
+            <div class="kanban-column__header_right">1 tareas</div>
+          </div>
+
+          <div class="task-area" id="todo"></div>
+
+          <button class="add-task-button">
+            <img
+              class="add-task-button__icon"
+              src="assets/imagenes/icon/icono_mas.svg"
+              alt="icono de mas"
+            />
+            <span class="add-task-button__text">Agregar tarea</span>
+          </button>
+        </div>
+        <div class="kanban-column">
+          <div class="kanban-column__header">
+            <div class="kanban-column__header_left">
+              <img
+                class="sm-icon"
+                src="assets/imagenes/icon/icono_en_proceso.svg"
+                alt="icono de tareas"
+              />
+              En proceso
+            </div>
+            <div class="kanban-column__header_right">1 tareas</div>
+          </div>
+          <div class="task-area" id="doing"></div>
+          <button class="add-task-button">
+            <img
+              class="add-task-button__icon"
+              src="assets/imagenes/icon/icono_mas.svg"
+              alt="icono de mas"
+            />
+            <span class="add-task-button__text">Agregar tarea</span>
+          </button>
+        </div>
+
+        <div class="kanban-column">
+          <div class="kanban-column__header">
+            <div class="kanban-column__header_left">
+              <img
+                class="sm-icon"
+                src="assets/imagenes/icon/icono_completado.svg"
+                alt="icono de tareas"
+              />
+              Completado
+            </div>
+            <div class="kanban-column__header_right">1 tareas</div>
+          </div>
+          <div class="task-area" id="done"></div>
+          <button class="add-task-button">
+            <img
+              class="add-task-button__icon"
+              src="assets/imagenes/icon/icono_mas.svg"
+              alt="icono de mas"
+            />
+            <span class="add-task-button__text">Agregar tarea</span>
+          </button>
+        </div>
+      </article>
+    </main>
+
+    <template id="plantilla-columna">
+      <div class="kanban-column">
+        <div class="kanban-column__header">
+          <div class="kanban-column__header_left">
+            <img
+              class="sm-icon"
+              src="svg/icono_por_hacer.svg"
+              alt="icono de tareas"
+            />
+            hola
+          </div>
+          <div class="kanban-column__header_right">1 tareas</div>
+        </div>
+
+        <div class="task-area" id="todo">
+          <section class="task-card" draggable="true" id="1">
+            <div class="task-card__header">
+              <p class="task-card__number">Tsk-001</p>
+              <p class="task-card__priority">Prioridad</p>
+            </div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+            consequuntur, modi vel suscipit sed perferendis voluptatum, vero
+            blanditiis praesentium autem provident nobis placeat recusandae
+            labore corporis, nisi itaque. Debitis, aliquam!
+            <div class="task-card__footer">
+              <img
+                class="add-task-button__icon"
+                src="assets/imagenes/icon/icono_comentario.svg"
+                alt="icono de comentarios"
+              />
+              5
+            </div>
+          </section>
+        </div>
+
+        <button class="add-task-button">
+          <img
+            class="add-task-button__icon"
+            src="svg/icono_mas.svg"
+            alt="icono de mas"
+          />
           <span class="add-task-button__text">Agregar tarea</span>
         </button>
       </div>
-    </main>
+    </template>
+    <template id="template-task-card">
+      <section class="task-card" draggable="true" id="1">
+        <div class="task-card__header">
+          <p class="task-card__number">Tsk-001</p>
+          <p class="task-card__priority">Prioridad</p>
+        </div>
+        <h4 class="tast-card__title">holas</h4>
+        <p class="task-card__texto">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+          consequuntur, modi vel suscipit sed perferendis voluptatum, vero
+          blanditiis praesentium autem provident nobis placeat recusandae labore
+          corporis, nisi itaque. Debitis, aliquam!
+        </p>
+        <div class="task-card__date">Fecha de finalizacion: 10/02/2000</div>
+        <div class="task-card__footer">
+          <div class="task-card__assigned">favio</div>
+          <div class="task-card__comments small-gap">
+            <img
+              class="sm-icon"
+              src="assets/imagenes/icon/icono_comentario.svg"
+              alt="icono de comentarios"
+            />
+            <p>0</p>
+          </div>
+        </div>
+      </section>
+    </template>
+    <dialog id="miModal">
+      <h2>Formulario de Registro</h2>
+
+      <form method="dialog" class="flex-column">
+        <label for="title-input">Titulo de la tarea:</label>
+        <input
+          type="text"
+          id="title-input"
+          placeholder="Titulo corto"
+          required
+        />
+
+        <label for="description-input">Descripcion:</label>
+        <textarea
+          class="textarea-task-add"
+          name="Descripción"
+          id="description-input"
+        ></textarea>
+
+        <div class="flex">
+          <div class="flex-column">
+            <label for="priority-input">Prioridad</label>
+            <select id="priority-input" name="priority" required>
+              <option>Alta</option>
+              <option>Media</option>
+              <option>Baja</option>
+            </select>
+          </div>
+
+          <div class="flex-column">
+            <label for="date-input">Fecha límite</label>
+            <input type="date" id="date-input" />
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="flex-column">
+            <label for="columns-input">Columna en tablero</label>
+            <select id="columns-input" name="columns" required>
+              <option value="todo">Por hacer</option>
+              <option value="doing">En proceso</option>
+              <option value="done">Completada</option>
+            </select>
+          </div>
+
+          <div class="flex-column">
+            <label for="users-input">Asignar a</label>
+            <select id="users-input" name="users" required>
+              <option>Luis Garcia</option>
+              <option>Pedro Lopez</option>
+              <option>Alberto Perez</option>
+            </select>
+          </div>
+        </div>
+        <!-- Botones de acción -->
+        <div class="botones">
+          <button type="button" id="btnCerrar">Cancelar</button>
+          <button type="submit" id="btn-send">Enviar</button>
+        </div>
+      </form>
+    </dialog>
+    <script src="assets/js/mover_añadir.js"></script>
+    <script src="assets/js/ventana_emergente.js"></script>
   </body>
 </html>

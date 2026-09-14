@@ -1,0 +1,51 @@
+:root {
+  --optical: auto;
+  --size-principal: 700;
+  --style-principla: normal;
+}
+header {
+  font-optical-sizing: var(--optical);
+  font-size: var(--size-principal);
+  font-style: var(--style-principla);
+}
+
+/*p {
+  text-align: center;
+  margin: auto 0px;
+}*/
+a {
+  color: inherit;
+}
+html {
+  background-color: #f8f9ff;
+  font-family: var(--main-source);
+}
+.kanban-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 350px;
+  gap: 15px;
+  background-color: #eef4ff;
+  padding: var(--ms-padding);
+}
+.tablero-kanban {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.statistics-dashboard {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+  flex-wrap: wrap;
+}
+main {
+  margin: 1.5em;
+}

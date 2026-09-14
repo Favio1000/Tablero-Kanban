@@ -1,0 +1,53 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 3em;
+  margin-bottom: 10px;
+}
+.header-sub-container {
+  display: flex;
+  align-items: center;
+}
+
+.medio-small-gap {
+  gap: var(--ms-gap);
+}
+.left-margin {
+  margin-left: 10px;
+}
+.right-content {
+  justify-content: flex-end;
+}
+
+.small-gap {
+  gap: var(--s-gap);
+}
+.ms-image {
+  width: var(--ms-image);
+  height: var(--ms-image);
+}
+.none-style-a {
+  text-decoration: none;
+}
+.user-image {
+  border-radius: 50%; /* 3. Hace el contenedor redondo */
+  overflow: hidden; /* 4. Corta las esquinas de la imagen de adentro */
+  border: 1px solid #d6dfe7;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Evita que la foto se estire o se deforme */
+}
+.rounded-corner {
+  border-radius: 1rem;
+  padding: var(--s-padding);
+  height: 1rem;
+}
+.effect:hover {
+  background-color: #d9e3f4;
+}
+.sm-icon {
+  height: var(--ms-size-icon);
+  width: var(--ms-size-icon);
+}

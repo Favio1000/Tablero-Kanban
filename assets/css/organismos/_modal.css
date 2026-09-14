@@ -1,0 +1,32 @@
+/* Estilos para la ventana emergente */
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%;
+}
+
+/* Estilos para oscurecer el fondo de la página */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px); /* Efecto difuminado opcional */
+}
+
+/* Estilos simples para el formulario */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 260px;
+  gap: 10px;
+}
+
+.botones,
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.textarea-task-add {
+  min-height: 150px;
+}

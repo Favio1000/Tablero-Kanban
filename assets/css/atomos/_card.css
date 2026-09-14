@@ -1,0 +1,87 @@
+/*=============================
+Tarjetas de tarea
+=================================*/
+
+.task-card,
+.statistical-card {
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+
+  /* 2. El truco de la suavidad (Buena práctica) */
+  /* Le dice al navegador que suavice el cambio de fondo durante 0.3 segundos */
+  transition: color 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.task-card {
+  width: 100%;
+  cursor: pointer; /* Hace que el puntero cambie a una "mano" */
+}
+.task-card:hover {
+  color: #04423b;
+}
+.task-card__number,
+.task-card__priority {
+  display: inline;
+}
+.task-card__priority {
+  color: rgb(8, 124, 8);
+  background-color: rgb(85, 231, 92);
+  padding: 2px;
+}
+.task-card__header {
+  margin-bottom: 10px;
+}
+.task-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-card__comments {
+  display: flex;
+  align-items: center;
+}
+.task-card__comment-icon {
+  width: var(--ms-size-icon);
+  height: var(--ms-size-icon);
+  margin-right: var(--ms-margin-right); /* Separa el icono del texto */
+  display: inline-block;
+  vertical-align: middle; /* Alinea el icono verticalmente con el texto del botón */
+}
+.task-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+/*=============================
+Tarjetas de estadisticas
+=================================*/
+
+.kanban-column__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+
+  /* 2. El truco de la suavidad (Buena práctica) */
+  /* Le dice al navegador que suavice el cambio de fondo durante 0.3 segundos */
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+.statistical-card__icon,
+.statistical-card__text {
+  display: inline-block;
+  margin: 0px;
+  vertical-align: middle;
+}
+.statistical-card {
+  min-width: 200px;
+  flex: 1;
+}

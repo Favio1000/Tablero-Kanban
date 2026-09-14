@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "id": "g4iNkdQPo7U",
+      "title": "hola",
+      "description": "que tal",
+      "priority": "Alta",
+      "dueDate": "2026-10-11",
+      "status": "todo"
+    },
+    {
+      "id": "nMWH1MDUd_k",
+      "title": "buenos dias",
+      "description": "como estas",
+      "priority": "Alta",
+      "dueDate": "2026-10-03",
+      "status": "todo"
+    },
+    {
+      "id": "ca1xwn0f6L8",
+      "title": "Ss",
+      "description": "dadad",
+      "priority": "Alta",
+      "dueDate": "2026-09-22",
+      "status": "todo"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
