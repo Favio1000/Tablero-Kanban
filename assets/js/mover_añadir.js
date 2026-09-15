@@ -1,16 +1,13 @@
 // 1. Seleccionamos los elementos del DOM
 
 const columnas = document.querySelectorAll(".kanban-column");
-// 2. Eventos para las Tareas (Las que se arrastran)
 
 // 3. Eventos para las Columnas (Las que reciben las tareas)
 columnas.forEach((columna) => {
   // Permite soltar elementos dentro de la columna
   columna.addEventListener("dragover", (e) => {
     e.preventDefault();
-    // Añade efecto visual
   });
-  // Quita el efecto visual cuando la tarea sale de la columna
 
   // Evento cuando se suelta la tarea
   columna.addEventListener("drop", (e) => {
@@ -54,18 +51,22 @@ function agregarNuevaTarea(
   clon.querySelector(".task-card__priority").textContent = prioridad;
   clon.querySelector(".task-card__texto").textContent = descripcion;
   clon.querySelector(".tast-card__title").textContent = titulo;
-  clon.querySelector(".task-card__date").textContent =
-    `Fecha de finalizacion:${fecha}`;
+  clon.querySelector(".task-card__date").textContent = fecha;
   clon.querySelector(".task-card__assigned").textContent = usuario;
   // 3. Inyectar el clon ya rellenado en el contenedor real del HTML
   contenedor.appendChild(clon);
 
   let tarea = document.getElementById(id);
+
   tarea.addEventListener("dragstart", (e) => {
     // Guardamos el ID de la tarea que se está arrastrando
     e.dataTransfer.setData("text/plain", e.target.id);
   });
 }
+
+/*==================================
+Boton enviar del formulario
+===================================*/
 
 // Escuchar el evento cuando se envía el formulario del modal
 document.querySelector("form").addEventListener("submit", (e) => {
@@ -85,18 +86,21 @@ document.querySelector("form").addEventListener("submit", (e) => {
     description: descripcion,
     priority: prioridad,
     dueDate: fecha,
+    user: usuario,
     status: columna_entrada,
   };
+
   fetch("http://localhost:3000/tasks", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(nuevaTarea),
+
+    body: JSON.stringify(nuevaTarea), //db.json
   })
     .then((response) => response.json())
     .then((data) => {
       console.log("Tarea guardada:", data);
 
-      // Llamar a la función pasándole los datos
+      //funcion agregarNuevaTarea
       agregarNuevaTarea(
         contadorTareas,
         titulo,
@@ -112,7 +116,9 @@ document.querySelector("form").addEventListener("submit", (e) => {
       e.target.reset();
     });
 });
-
+/*==================================
+CARGAR TAREAS
+ ===================================*/
 function cargarTareas() {
   fetch("http://localhost:3000/tasks")
     .then((response) => response.json())
@@ -124,7 +130,7 @@ function cargarTareas() {
           tarea.priority,
           tarea.description,
           tarea.dueDate,
-          "", // usuario
+          tarea.user, // usuario
           tarea.status,
         );
       });
@@ -133,4 +139,15 @@ function cargarTareas() {
       console.error("Error al cargar las tareas:", error);
     });
 }
+
 cargarTareas();
+
+const tareas = document.querySelectorAll("div");
+
+tareas.forEach((tarea) => {
+  tarea.addEventListener("click", (e) => {
+    const idTarea = e.currentTarget.id;
+
+    console.log("Has hecho click en:", idTarea);
+  });
+});

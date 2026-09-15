@@ -49,3 +49,10 @@ html {
 main {
   margin: 1.5em;
 }
+
+/* Oculta el elemento en pantallas pequeñas (móviles) de menos de 768px */
+@media (max-width: 767px) {
+  .user-date {
+    display: none;
+  }
+}

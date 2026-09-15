@@ -84,4 +84,5 @@ Tarjetas de estadisticas
 .statistical-card {
   min-width: 200px;
   flex: 1;
+  background-color: #9cf2e852;
 }
